@@ -1,0 +1,83 @@
+<!doctype html>
+<html ng:app="myApp">
+<head>
+    <meta charset="utf-8">
+    <title>my angular app</title>
+    <!-- 3rd library for css file-->
+    <link rel="stylesheet" href="css/app.css"/>
+    <link rel="stylesheet" href="css/style.css"/>
+    <!--   <link rel="stylesheet" href="lib/bootstrap-3.3.7-dist/css/bootstrap.css">
+       <link rel="stylesheet" href="lib/bootstrap-3.3.7-dist/css/bootstrap-theme.css">-->
+    <link rel="stylesheet" href="lib/semantic-ui/dist/semantic.css">
+    <link rel="stylesheet" href="lib/daterangepicker/daterangepicker.css">
+
+    <!-- 3rd library file for js -->
+    <script type="application/javascript" src="lib/jquery-2.1.1.js"></script>
+    <script type="application/javascript" src="lib/angular.js"></script>
+    <script src="lib/angular-ui-router.js"></script>
+    <!-- <script type="application/javascript" src="lib/bootstrap-3.3.7-dist/js/bootstrap.js"></script>-->
+    <script src="lib/semantic-ui/dist/semantic.js"></script>
+    <script src="lib/daterangepicker/moment.js"></script>
+    <script src="lib/daterangepicker/daterangepicker.js"></script>
+
+    <script src="js/app.js"></script>
+
+</head>
+<body>
+<div class="left-menu">
+    <div class="logo">
+        <div>BI Testing</div>
+    </div>
+    <div class="accordion">
+        <div class="section">
+            <input type="radio" name="accordion-1" id="section-1" checked="checked"/>
+            <label for="section-1"><span>用户分析</span></label>
+            <div class="content">
+                <ul>
+                    <li><i></i><a ui-sref="index0" ui-sref-active="active">引流效果</a></li>
+                    <li><i></i><a ui-sref="custom0" ui-sref-active="active">客户对比分析</a></li>
+                    <li><i></i><a ui-sref="keep0" ui-sref-active="active">留存分析</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="section">
+            <input type="radio" name="accordion-1" id="section-2" value="toggle"/>
+            <label for="section-2"><span>交易分析</span></label>
+            <div class="content">
+                <ul>
+                    <li><i></i><a ui-sref="cash0" ui-sref-active="active">充值/提现</a></li>
+                    <li><i></i><a ui-sref="invest0" ui-sref-active="active">投资/赎回分析</a></li>
+                    <li><i></i><a ui-sref="vote0" ui-sref-active="active">在投分析</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="section">
+            <input type="radio" name="accordion-1" id="section-3" value="toggle"/>
+            <label for="section-3"><span>营销效果分析</span></label>
+            <div class="content">
+                <ul>
+                    <li><i></i><a ui-sref="marketactive0" ui-sref-active="active">营销活动效果</a></li>
+                    <li><i></i><a ui-sref="marketmoney0" ui-sref-active="active">营销成本分析</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="section">
+            <input type="radio" name="accordion-1" id="section-4" value="toggle"/>
+            <label for="section-4"><span>渠道分析</span></label>
+            <div class="content">
+                <ul>
+                    <li><i></i> <a ui-sref="channel0" ui-sref-active="active">渠道分析</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<ui-view></ui-view>
+
+<script type="application/javascript">
+
+</script>
+
+</body>
+</html>
