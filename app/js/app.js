@@ -48,6 +48,5 @@ app.config(function ($stateProvider, $urlRouterProvider) {
     $stateProvider.state(showprojects);
     $stateProvider.state(testing);
     $stateProvider.state(team);
-
-
 });
+

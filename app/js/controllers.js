@@ -1,11 +1,10 @@
 'use strict';
 
-/* Controllers */
+app.controller('mainController', function ($scope) {
 
-angular.module('myApp.controllers', [])
-    .controller('MyCtrl1', [function() {
+    $('#project_table').DataTable();
 
-    }])
-    .controller('MyCtrl2', [function() {
-
-    }]);
+    $.get("http://localhost:8088/project/getall", function (data, status) {
+        alert("Data: " + data + "\nStatus: " + status);
+    });
+});
