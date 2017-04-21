@@ -2,52 +2,53 @@
     <div class="panel panel-default" style="margin-top: 20px">
         <div class="panel-body">
             My Project
+            <button class="btn btn-info" data-toggle="modal" data-target="#addproject">Add Project</button>
         </div>
     </div>
     <hr>
 
     <div>
         <div class="container">
-            <table id="project_table" class="display" cellspacing="0" width="100%">
-                <thead>
-                <tr>
-                    <!-- <th>ID</th>
-                     <th>Name</th>
-                     <th>Creator</th>
-                     <th>CreateTime</th>
-                     <th>Note</th>-->
-                    <th>Name</th>
-                    <th>Position</th>
-                    <th>Office</th>
-                    <th>Age</th>
-                    <th>Start date</th>
-                    <th>Salary</th>
-                </tr>
-
-                </thead>
-
-                <tbody>
-                <tr>
-                    <td>Tiger Nixon</td>
-                    <td>System Architect</td>
-                    <td>Edinburgh</td>
-                    <td>61</td>
-                    <td>2011/04/25</td>
-                    <td>$320,800</td>
-                </tr>
-                <tr>
-                    <td>Garrett Winters</td>
-                    <td>Accountant</td>
-                    <td>Tokyo</td>
-                    <td>63</td>
-                    <td>2011/07/25</td>
-                    <td>$170,750</td>
-                </tr>
-                </tbody>
+            <table id="project_table" class="display col-md-12" width="100%">
             </table>
         </div>
     </div>
-</div>
 
+
+    <!-- Modal -->
+    <div class="modal fade" id="addproject" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Add Project</h4>
+                </div>
+                <div class="modal-body">
+                    <form role="form">
+                        <div class="form-group">
+                            <label for="name">Project Name</label>
+                            <input type="text" class="form-control" id="name" placeholder="Project Name">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="creator">Creator Name</label>
+                            <input type="text" class="form-control" id="creator" placeholder="Creator Name">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="note">Note Name</label>
+                            <textarea type="" class="form-control" id="note" placeholder="Note Name"></textarea>
+                        </div>
+                    </form>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="submit" ng-click="SaveProject()" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
 </div>
