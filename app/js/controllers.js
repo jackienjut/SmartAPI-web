@@ -32,6 +32,8 @@ app.controller('mainController', function ($scope) {
 
     $scope.SaveProject = function () {
 
+        alert('aa');
+
         var name = $('#name').val();
         var creator = $('#creator').val();
         var note = $('#note').val();
@@ -45,3 +47,25 @@ app.controller('mainController', function ($scope) {
         });
     }
 });
+
+app.controller('interfaceController', function ($scope) {
+    $.get("http://116.62.50.226:8080/smartapi/interface/getALlInterface/1/1", function (data, status) {
+        data = eval(data);
+        var datas = new Array();
+
+        var tbody = '';
+        $.each(data, function (index, item) {
+            tbody += '<tr><td>' + item.ID + '</td><td>' + item.scheme + '</td><td>' + item.host + '</td><td>'
+                + item.method + '</td><td>' + item.parameters + '</td><td>' + item.header + '</td><td>' + item.notes + '</td>' +
+                '<td><button type="button" class="btn btn-danger" onclick="MockData" >Mock</button></td></tr>'
+        })
+
+        $('#interface_table tbody').append(tbody);
+
+        $('#interface_table').DataTable();
+    });
+
+    function MockData() {
+        alert('aa');
+    }
+})
