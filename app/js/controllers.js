@@ -49,6 +49,7 @@ app.controller('mainController', function ($scope) {
 });
 
 app.controller('interfaceController', function ($scope) {
+    var callback_flag = false;
     $.get("http://116.62.50.226:8080/smartapi/interface/getALlInterface/1/1", function (data, status) {
         data = eval(data);
         var datas = new Array();
@@ -57,15 +58,22 @@ app.controller('interfaceController', function ($scope) {
         $.each(data, function (index, item) {
             tbody += '<tr><td>' + item.ID + '</td><td>' + item.scheme + '</td><td>' + item.host + '</td><td>'
                 + item.method + '</td><td>' + item.parameters + '</td><td>' + item.header + '</td><td>' + item.notes + '</td>' +
-                '<td><button type="button" class="btn btn-danger" onclick="MockData" >Mock</button></td></tr>'
+                '<td><button type="button" class="btn btn-danger" ng-click="MockData()" >Mock</button></td></tr>'
         })
+        callback_flag = true;
 
         $('#interface_table tbody').append(tbody);
-
         $('#interface_table').DataTable();
+
+        $scope.MockData = function () {
+            alert('MockData');
+        }
     });
 
-    function MockData() {
-        alert('aa');
+    $scope.test = function () {
+        alert('test');
     }
+
 })
+
+
