@@ -48,32 +48,33 @@ app.controller('mainController', function ($scope) {
     }
 });
 
-app.controller('interfaceController', function ($scope) {
-    var callback_flag = false;
-    $.get("http://116.62.50.226:8080/smartapi/interface/getALlInterface/1/1", function (data, status) {
-        data = eval(data);
-        var datas = new Array();
+app.controller('interfaceController', function ($scope, $http, $compile, $log) {
 
+    $http.get('http://116.62.50.226:8080/smartapi/interface/getALlInterface/1/1').success(function (response) {
+        var data = eval(response);
         var tbody = '';
         $.each(data, function (index, item) {
             tbody += '<tr><td>' + item.ID + '</td><td>' + item.scheme + '</td><td>' + item.host + '</td><td>'
                 + item.method + '</td><td>' + item.parameters + '</td><td>' + item.header + '</td><td>' + item.notes + '</td>' +
                 '<td><button type="button" class="btn btn-danger" ng-click="MockData()" >Mock</button></td></tr>'
         })
-        callback_flag = true;
 
-        $('#interface_table tbody').append(tbody);
+        var $html = $compile(tbody)($scope);
+        $('#interface_table tbody').append($html);
         $('#interface_table').DataTable();
 
-        $scope.MockData = function () {
-            alert('MockData');
-        }
     });
 
-    $scope.test = function () {
-        alert('test');
+    $scope.MockData = function () {
+        $log.log('aa')
+        $('#mock').modal()
+        $('#content').tab('show');
     }
 
+    $('#myTab a').click(function (e) {
+        e.preventDefault();
+        $(this).tab('show');
+    })
 })
 
 
