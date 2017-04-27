@@ -75,6 +75,14 @@ app.controller('interfaceController', function ($scope, $http, $compile, $log) {
         e.preventDefault();
         $(this).tab('show');
     })
+
+    $scope.MockTestData = function () {
+        alert('Mock Test Data');
+    }
+
+    $scope.SimulateData = function () {
+        alert('Simulate Data');
+    }
 })
 
 
