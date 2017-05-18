@@ -76,12 +76,27 @@ app.controller('interfaceController', function ($scope, $http, $compile, $log) {
         $(this).tab('show');
     })
 
+    $scope.addParamters = function () {
+        alert('aa');
+        var name = $('parameters-name').val();
+        var value = $('parameters-value').val();
+        $('paramters-li').append("<li>" + name + ":" + value + "</li>")
+    }
+
+    $scope.deleteParameters = function () {
+        alert('delete');
+    }
+
     $scope.MockTestData = function () {
-        alert('Mock Test Data');
+        $http.get('http://localhost:8088/test1').success(function (response) {
+            alert(response);
+        });
     }
 
     $scope.SimulateData = function () {
-        alert('Simulate Data');
+        $http.get('http://localhost:8088/test').success(function (response) {
+            alert(response);
+        });
     }
 })
 

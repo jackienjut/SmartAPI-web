@@ -38,38 +38,38 @@
                     <h4 class="modal-title" id="myModalLabel">Add Project</h4>
                 </div>
                 <div class="modal-body">
-                    <form role="form">
-                        <div class="form-group">
-                            <label for="name">Scheme</label>
+
+                    <div class="form-group">
+                        <label for="name">Scheme</label>
+                        <div class="col-md-5">
                             <input type="text" class="form-control" id="name" placeholder="Project Name">
                         </div>
+                    </div>
 
-                        <div class="form-group">
-                            <label for="creator">Host</label>
-                            <input type="text" class="form-control" id="creator" placeholder="Creator Name">
-                        </div>
+                    <div class="form-group">
+                        <label for="creator">Host</label>
+                        <input type="text" class="form-control" id="creator" placeholder="Creator Name">
+                    </div>
 
-                        <div class="form-group">
-                            <label for="method">Method</label>
-                            <textarea type="" class="form-control" id="method" placeholder="Note Name"></textarea>
-                        </div>
+                    <div class="form-group">
+                        <label for="method">Method</label>
+                        <textarea type="" class="form-control" id="method" placeholder="Note Name"></textarea>
+                    </div>
 
-                        <div class="form-group">
-                            <label for="paramters">paramters</label>
-                            <textarea type="" class="form-control" id="paramters" placeholder="Note Name"></textarea>
-                        </div>
+                    <div class="form-group">
+                        <label for="paramters">paramters</label>
+                        <textarea type="" class="form-control" id="paramters" placeholder="Note Name"></textarea>
+                    </div>
 
-                        <div class="form-group">
-                            <label for="header">header</label>
-                            <textarea type="" class="form-control" id="header" placeholder="Note Name"></textarea>
-                        </div>
+                    <div class="form-group">
+                        <label for="header">header</label>
+                        <textarea type="" class="form-control" id="header" placeholder="Note Name"></textarea>
+                    </div>
 
-                        <div class="form-group">
-                            <label for="note">notes</label>
-                            <textarea type="" class="form-control" id="note" placeholder="Note Name"></textarea>
-                        </div>
-                    </form>
-
+                    <div class="form-group">
+                        <label for="note">notes</label>
+                        <textarea type="" class="form-control" id="note" placeholder="Note Name"></textarea>
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -87,7 +87,7 @@
                             aria-hidden="true">&times;</span></button>
                     <h4 class="modal-title" id="myModalLabel2">Add Project</h4>
                 </div>
-                  <div class="modal-body">
+                <div class="modal-body">
                     <div>
                         <div class=" pull-left">
                             URL
@@ -130,14 +130,14 @@
                             </ul>
                         </div>
                         <div class="tab-pane" id="parameters">
-                            class="tab-pane" id="headers">
                             <div>
-                                Name:<input class="input"> Value:<input class="input">
-                                <button class="btn btn-block">Add</button>
+                                Name:<input id="parameters-name" class="input">
+                                Value:<input id="parameters-value" class="input">
+                                <button class="btn btn-info" ng-click="addParamters()">Add</button>
                             </div>
-                            <button class="btn btn-block">Delete</button>
-                            <ul>
-                                <li>aa</li>
+                            <button class="btn btn-info" ng-click="deleteParameters()">Delete</button>
+                            <ul id="paramters-li">
+                                <li>Name:Value</li>
                             </ul>
                         </div>
                     </div>
